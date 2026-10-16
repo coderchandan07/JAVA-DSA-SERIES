@@ -1,1 +1,602 @@
 
+import java.util.Scanner;
+
+void main() {
+//    ============================================================
+
+//    While loop Q1 (print numbers from 1 to 10)
+    int counter = 1;
+    while(counter <= 10){
+        System.out.println(counter);
+        counter++;
+    }
+
+//    ============================================================
+
+//    While loop Q2 (print numbers from 1 to n)
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter your range : ");
+    long range = sc.nextLong();
+    long i = 1;
+    while(i <= range){
+        System.out.println(i);
+        i++;
+    }
+
+//    ===========================================================
+
+//    While loop Q3 (print reverse number series of user input:)
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter your range: ");
+    long range = sc.nextLong();
+
+    while(range >= 1 ){
+        System.out.println(range);
+        range--;
+    }
+
+//    =============================================================
+
+//    While loop Q4 (printing even number from 1 to n)
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your range :");
+    long range = sc.nextLong();
+    long i = 1;
+    while(i <= range){
+        if(i % 2 == 0){
+            System.out.println(i);
+        }
+        i++;
+    }
+
+//    ==================================================================
+
+//    While loop Q5 (Sum of first N natural numbers)
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter your range :");
+    long range = sc.nextLong();
+    long i = 1,sum = 0;
+
+    while (i <= range){
+        sum = sum + i;
+        i++;
+    }
+    System.out.println(sum);
+
+//    ==============================================================
+
+//    While loop Q6 (Sum of n even numbers)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your range :");
+    long range = sc.nextLong();
+    long i = 1 , sum = 0;
+    while(i <= range){
+        if(i % 2 == 0){
+            sum = sum + i;
+        }
+        i++;
+    }
+    System.out.println(sum);
+
+//    ===========================================================
+
+//    While loop Q7 (user input multipliction table)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Your Number : ");
+    int num = sc.nextInt();
+    System.out.println("============================");
+
+    int i = 1;
+    while(i<=10){
+        System.out.println(num + " * " + i + " = " + i*num);
+        i++;
+    }
+
+//    ================================================================
+
+//    While Loop Q8( Factorial)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a number :");
+    long n = sc.nextLong();
+    long fact = 1;
+
+    while(n > 0) {
+        fact = fact * n;
+        n--;
+    }
+    System.out.println(fact);
+
+//    ===================================================================
+
+//    While Loop Q9( Counting Digits in a number)
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number :");
+    long num = sc.nextLong();
+    long count = 0;
+
+    while(num > 0) {
+        num = num / 10;
+        count++;
+    }
+    System.out.println(count);
+
+//    =======================================================================
+
+//    While Loop Q10( Counting Digits in a even number)
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number");
+    long num = sc.nextLong();
+    long count = 0, digit;
+
+    while(num > 0) {
+        digit = num % 10;
+        if (digit % 2 == 0) {
+            count++;
+
+        }
+        num = num / 10;
+    }
+    System.out.println(count);
+
+//    ============================================================================
+
+//    while Loop Q11 (counting Digit in a odd number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number :");
+    long num = sc.nextLong();
+    long count = 0 , Digit;
+
+    while(num > 0) {
+        Digit = num % 10;
+        if (Digit % 2 != 0){
+            count++;
+
+        }
+        num = num / 10;
+    }
+    System.out.println("Total number of odd digit : "+count);
+
+//    ================================================================================
+
+//    while Loop Q12 (Reverse a number )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a number :");
+    long num = sc.nextLong();
+    long rev = 0 , Digit;
+
+    while(num > 0) {
+        Digit = num % 10;
+        rev = rev * 10 + Digit;
+        num = num / 10;
+    }
+    System.out.println("Total number of reverse digit :"+rev);
+
+//    ================================================================================
+
+//    While Loop Q13(palindrome number check)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter your number ");
+    long num = sc.nextLong();
+    long rev = 0 , Digit , og = num ;
+
+    while(num > 0){
+        Digit = num % 10;
+        rev = rev*10 + Digit;
+        num = num/10;
+
+    }
+    if(rev == og){
+        System.out.println("palindrome ");
+    }else{
+        System.out.println("not palindrone");
+    }
+
+//    ==========================================================================
+
+//    While loop Q14(Sum Of Even Digit In A Number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long sum = 0 , digit;
+
+    while(num > 0){
+        digit = num%10;
+        if(num % 2 == 0){
+            sum = sum + digit;
+        }
+        num = num/10;
+    }
+    System.out.println("Sum is all even digit is " +sum);
+
+//    ===========================================================================
+
+//    While loop Q15(Count number of even & odd digits in a number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter a number ");
+    long num = sc.nextLong();
+    long even_count = 0 , odd_count = 0 , digit;
+
+    while(num > 0){
+        digit = num % 10;
+        num = num / 10;
+        if(num % 2 ==0){
+            even_count++;
+        }
+        else{
+            odd_count++;
+        }
+
+    }
+    System.out.println("Even count" +even_count);
+    System.out.println("Odd count" + odd_count);
+
+//    ===================================================================================
+
+//    While loop Q16(Find Largest Digit is a number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter a number ");
+    long num = sc.nextLong();
+    long largest_digit = num%10 , digit;
+
+    while(num > 0){
+        digit = num % 10;
+        if(digit > largest_digit){
+            largest_digit = digit;
+        }
+        num = num/10;
+    }
+    System.out.println(largest_digit);
+
+//    =======================================================================================
+
+//    While loop Q17(Find Smallest Digit in a number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter your number ");
+    long num = sc.nextLong();
+    long smallest_num = num%10 , digit;
+
+    while(num > 0){
+        digit = num%10;
+        if(digit < smallest_num){
+            smallest_num = digit;
+        }
+        num = num/10;
+    }
+    System.out.println(smallest_num);
+
+//    =========================================================================================
+
+//    While loop Q18(Find the second_largest digit)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("enter your number ");
+    long num = sc.nextLong();
+    long digit , largest= 0 , second_largest= 0;
+
+    while(num > 0) {
+        digit = num % 10;
+        if (digit > largest) {
+            second_largest = largest;
+            largest = digit;
+        }else if(digit > second_largest){
+              second_largest = digit;
+
+        }
+        num = num/10;
+    }
+    System.out.println("Second_largest num is" +second_largest);
+
+//    =============================================================================
+
+//    While loop Q19(Find the second_smallest digit)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a number ");
+    long num = sc.nextLong();
+    long digit , smallest , second_smallest=0;
+    smallest = num%10;
+    while(num > 0) {
+        digit = num % 10;
+        if (digit < smallest) {
+            second_smallest = smallest;
+            smallest = digit;
+
+        } else if(digit < second_smallest) {
+                second_smallest = digit;
+        }
+        num = num / 10;
+    }
+    System.out.println("second_smallest num is " +second_smallest);
+
+//    ====================================================================================
+
+//    while loop Q20 (Finding Frequency Of A Digit In A Number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    System.out.println("Enter digit frequency num ");
+    long tar = sc.nextLong();
+    long digit , count=0;
+
+    while(num > 0){
+        digit = num % 10;
+        if(digit == tar){
+         count++;
+        }
+        num = num/10;
+    }
+    System.out.println("Frequency of target number :" +count);
+
+//    ==================================================================================
+
+//    While loop Q21(Finding Frequency Of The Largest Number In A Number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long digit , largest = num%10, og = num , count=0;
+    while(num > 0){
+        digit = num%10;
+        if(digit > largest){
+            largest = digit;
+        }
+        num = num/10;
+    }
+
+    while (og > 0){
+        digit = og%10;
+        if(digit == largest){
+            count++;
+        }
+        og = og/10;
+
+    }
+    System.out.println("Largest Digit Is : "+largest);
+    System.out.println("Frequency of Largest No. Is : "+count);
+
+//    ======================================================================================
+
+//    While loop Q22 (Finding Sum Of Even And Odd Digits In A Number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long digit, even_sum = 0, odd_sum = 0, even_count = 0, odd_count = 0;
+
+    while (num > 0) {
+        digit = num % 10;
+        if (num % 2 == 0) {
+            even_sum = even_sum + digit;
+            even_count++;
+        } else {
+            odd_sum = odd_sum + digit;
+            odd_count++;
+        }
+        num = num / 10;
+    }
+    System.out.println("Sum Of Even Digits " + even_sum);
+    System.out.println("Total num of even_digit" + even_count);
+    System.out.println("Sum Of Odd Digits " + odd_sum);
+    System.out.println("Total num off Odd_digit" + odd_count);
+
+//    ==============================================================================
+
+//    While Loop Q23 ( Product Of All Digits In A Number )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long digit , mul = 1;
+
+    while(num > 0){
+        digit = num%10;
+        mul = mul * digit;
+        num = num / 10;
+    }
+    System.out.println("Product of all digit in a num "+mul);
+
+//    ===============================================================================
+
+//    While loop Q24 ( Finding HCF Of The Two Given Number )
+
+     Scanner sc = new Scanner(System.in);
+    System.out.println("Enter first number ");
+    long num1 = sc.nextLong();
+    System.out.println("Enter Second number ");
+    long num2 = sc.nextLong();
+    long i = 1 , hcf = 1;
+
+    while( i <= num1 || i <= num2) {
+        if (num1 % i == 0 && num2 % i == 0) {
+            hcf = i;
+            System.out.println("" + i);
+        }
+        i++;
+    }
+    System.out.println("Hcf is :"+hcf);
+
+//    =========================================================================
+
+    while loop Q25(Finding Whether A Number Is Perfect)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long i = 1, fact_sum = 0;
+
+    while (i < num) {
+        if (num % i == 0) {
+            fact_sum = fact_sum + i;
+        }
+        i++;
+    }
+    if (fact_sum == num) {
+        System.out.println("perfect number :");
+    } else {
+        System.out.println("not perfect number :");
+    }
+
+//    ==============================================================================
+
+//    While loop Q26 (Fibonacci Series)
+
+   Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your num ");
+    long num = sc.nextLong();
+    long i = 1;
+    long a = 0 , b = 1;
+    while(i <= num){
+        System.out.print(""+a);
+        long next = a + b;
+        a = b;
+        b = next;
+        i++;
+    }
+
+//    ==============================================================================
+
+//    While loop Q27(Armstrong number)
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Enter a number: ");
+    int num = sc.nextInt();
+
+    int original = num;
+    int temp = num;
+    int count = 0;
+    int sum = 0;
+
+    // Count the number of digits
+    while (temp > 0) {
+        temp = temp / 10;
+        count++;
+    }
+
+    temp = num;
+
+    // Calculate the Armstrong sum
+    while (temp > 0) {
+        int digit = temp % 10;
+        int power = 1;
+        int i = 1;
+
+        while (i <= count) {
+            power = power * digit;
+            i++;
+        }
+
+        sum = sum + power;
+        temp = temp / 10;
+    }
+
+    if (sum == original) {
+        System.out.println(original + " is an Armstrong Number.");
+    } else {
+        System.out.println(original + " is not an Armstrong Number.");
+    }
+
+//    While loop Q28(Strong number)
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Enter your number: ");
+    long num = sc.nextLong();
+
+    long original = num;
+    long sum = 0;
+
+    while (num > 0) {
+        long digit = num % 10;
+
+        long fact = 1;
+        long i = 1;
+
+        while (i <= digit) {
+            fact = fact * i;
+            i++;
+        }
+
+        sum = sum + fact;
+        num = num / 10;
+    }
+
+    if (sum == original) {
+        System.out.println(original + " is a Strong Number.");
+    } else {
+        System.out.println(original + " is not a Strong Number.");
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
