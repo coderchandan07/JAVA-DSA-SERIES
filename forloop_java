@@ -1,0 +1,423 @@
+
+import java.util.Scanner;
+void main() {
+
+//     for loop Q1 (print numbers from 1 to 10)
+
+    for(int i = 1; i<=10; i++){
+        System.out.println("hello world");
+    }
+
+//    ==============================================================================
+
+//     for loop Q2 (print numbers from 1 to n)
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long n = sc.nextLong();
+    long i = 1;
+    for( i = 1; i <=n; i++ ) {
+        System.out.println("Hello world");
+    }
+
+//  ===================================================================================
+
+//  for loop Q3 (print reverse number series of user input:)
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter your number :");
+    long num = sc.nextLong();
+
+    for(long i = num; i >= 1; i--){
+        System.out.print(i);
+    }
+    sc.close();
+
+//    ===============================================================================
+
+//   for loop Q4 (printing even number from 1 to n)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long n = sc.nextLong();
+
+    for(long i = 1; i <= n; i++) {
+        if (i % 2 == 0) {
+            System.out.println(i);
+        }
+    }
+
+//     for loop Q5 (Sum of first N natural numbers)
+
+    Scanner sc = new Scanner(System.in);
+        System.out.print("enter your number");
+        long n = sc.nextLong();
+        long sum =0;
+
+        for(long i= 1; i<=n; i++) {
+            System.out.println(i);
+            sum = sum + i;
+        }
+    System.out.println(sum);
+
+//=====================================================================================
+
+//    for loop Q6 (Sum of n even numbers)
+
+    int sum = 0;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Your Starting Number : ");
+    int start_num = sc.nextInt();
+    System.out.println("Enter Your Ending Number : ");
+    int end_num = sc.nextInt();
+
+    for (int i=start_num; i<=end_num; i++){
+        if (i%2==0){
+            sum = sum+i;
+        }
+    }
+    System.out.println("Sum : "+sum);
+
+//    ===================================================================================
+
+//    for loop Q7 (user input multipliction table)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number");
+    long num = sc.nextLong();
+
+    for(long i=1; i<=10; i++){
+        System.out.println(num + "x" + i + "= " +(num*i));
+    }
+
+//    ===================================================================================
+
+//    for Loop Q8( Factorial)
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long n = sc.nextLong();
+    long fact = 1;
+
+    for (long i = n; i >1; i--) {
+        fact = fact * i;
+    }
+    System.out.println("factorial Is" + fact);
+
+//    ====================================================================================
+
+//    for Loop Q9 ( Counting Digits in a number)
+
+    Scanner sc= new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long count=0;
+
+    for(;num>0;count++) {
+        num = num / 10;
+    }
+    System.out.println(count);
+
+//    ======================================================================================
+
+//   for Loop Q10 ( Counting Digits in a even  number)
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long count = 0, digit;
+
+    for (; num > 0; num = num / 10) {
+        digit = num % 10;
+        if (digit % 2 == 0) {
+            count++;
+        }
+    }
+    System.out.println("counting Digit in a even number " + count);
+
+//    =======================================================================================
+
+//      for Loop Q11 ( Printing Reverse Of A Given Number )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter your number ");
+    long num = sc.nextLong();
+    long rev=0 ,digit;
+
+    for(;num>0;){
+    digit = num % 10;
+    rev = rev * 10 + digit;
+    num = num / 10 ;
+    }
+    System.out.println(rev);
+
+//    =========================================================================================
+
+//  for Loop  Q12 ( Printing Sum Of Digit In A Given Number )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number");
+    long num = sc.nextLong();
+    long digit, sum = 0;
+
+    for(; num>0;) {
+        digit = num % 10;
+        sum = sum + digit;
+        num = num / 10;
+    }
+    System.out.println("Print sum of digit in a num "+sum);
+
+//    ==========================================================================================
+
+//   for Loop Q13 ( Palindrom Number Checker )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long num = sc.nextLong();
+    long digit , rev=0, og = num;
+    for(; num>0;){
+      digit = num%10;
+      rev= rev * 10 + digit;
+      num = num/10;
+    }
+    if(og==rev){
+        System.out.println("Palindrome number");
+    }
+    else{
+        System.out.println("Not palindrome number");
+    }
+
+//    =====================================================================================
+
+//    for Loop Q14 ( Armstrong Number Checker )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter number your check ");
+    long num = sc.nextLong();
+    long  digit ,cube,sum=0,og=num;
+
+    for(; num>0;) {
+        digit = num % 10;
+        cube =( digit * digit * digit);
+        sum = sum+cube;
+        num = num / 10;
+    }
+    if(og==sum){
+        System.out.println("Armstrong IS");
+    }
+    else{
+        System.out.println("Not Armstrong IS");
+    }
+
+//    ==========================================================================
+
+// for Loop   Q15 ( Printing Febonacci Series )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter your number ");
+    long num = sc.nextLong();
+    long first = 0, second = 1, next;
+
+    if (num >= 2) {
+        System.out.print("0 1");
+        for (long i = 3; i <= num; i++) {
+            next = first + second;
+            first = second;
+            second = next;
+            System.out.print("" + next);
+        }
+    } else if (num == 1) {
+        System.out.print("0");
+    } else {
+        System.out.println("Enter Any positive value");
+    }
+
+//    ================================================================================
+
+//    For Loop Q16 ( Printing Number From 50-100 )
+    for (long i = 50; i<=100; i++) {
+        System.out.println(i);
+    }
+
+//    ================================================================================
+//    For Loop Q17 ( Printing Number From 100-50 )
+    for(long i=100; i>=50; i--){
+        System.out.println(i);
+    }
+
+//    =================================================================================
+
+//    For Loop Q18 ( Printing String Series )
+    for (int i=1; i<=5; i++){
+       System.out.println("Welcome To Java");
+    }
+
+//    =================================================================================
+
+//    For Loop Q19 ( Taking Input From User And Printing Number Series )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter your number");
+    long Input = sc.nextLong();
+    for(long i = 1; i<=Input; i++){
+        System.out.println(i);
+
+    }
+//    ===================================================================================
+
+//    For Loop Q20 ( Printing Number Series Multiple Of 5)
+
+    for(long i=5; i<=100; i+=5){
+        System.out.println(i);
+    }
+//    =================================================================================
+
+//    For Loop Q21 ( Printing Number Series Number Divisible By 3 and 7 )
+
+    for(long i=1; i<=100; i++){
+      if(i%3==0 && i%7==0){
+          System.out.println(i);
+    }
+     }
+
+//    ================================================================================
+
+//    For Loop Q22 ( Taking Input From User Starting And Ending Values And Printing Num series )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter your Starting_num");
+    long start_num = sc.nextLong();
+    System.out.println("Enter your Ending_num");
+    long end_num = sc.nextLong();
+    for(long i = start_num; i <=end_num; i++){
+        System.out.println(i);
+    }
+
+//    ===================================================================================
+
+//   for Loop Q23 ( Printing Table of Any Number Given Input By User )
+
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter your number ");
+    long num= sc.nextLong();
+
+    for(long i = 1; i<=10; i++){
+        System.out.println(num + "*" + i + "=" +num*i);
+    }
+
+//    ============================================================================
+
+//  for Loop Q24 (For Loop Q13 ( Printing Prime Number Till Range Given By User )
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your start number ");
+    long start = sc.nextLong();
+    System.out.println("Enter your end number ");
+    long end = sc.nextLong();
+
+    for(long i = start; i<= end; i++){
+        boolean isprime = true;
+
+        for(long j = 2; j <i; j++){
+           if(i % j==0){
+            isprime = false;
+            break;
+           }
+        }
+        if(isprime && i > 1){
+            System.out.println(i);
+        }
+    }
+//========================================================================================
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    long n = sc.nextLong();
+    boolean Isprime=true;
+    for(long i=2; i<Math.sqrt(n); i++ ){
+//        yaha eske jagah Math.sqrt(n) pe mai n-1
+      if(n % i ==0){
+          Isprime = false;
+
+      }
+    }
+    if(Isprime==true && n > 1){
+        System.out.println("Is a prime number ");
+    }else{
+        System.out.println("is not prime number ");
+    }
+
+    How many times 'Hello' is printed?
+
+    for(int i = 0; i < 5; i++) {
+        System.out.println("Hello");
+        i += 2;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
