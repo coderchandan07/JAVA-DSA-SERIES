@@ -1,0 +1,298 @@
+
+import java.util.*;
+void main() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+   long n= sc.nextLong();
+   long i = 1;
+   do{
+       System.out.println("hello world");
+       i++;
+   }while(i<=n);
+
+//    =======================================================================================
+
+//  do-whileLoop Q1 9  Printing Reverse Of A Given Number)
+   Scanner sc = new Scanner(System.in);
+   System.out.print("Enter your number ");
+   long num = sc.nextLong();
+   long digit , rev =0;
+   do{
+       digit = num% 10;
+       rev = rev * 10 + digit;
+       num = num / 10;
+   }while(num>0);
+   System.out.println(rev);
+
+//    ========================================================================================
+
+// do-whileLoop Q2  (Printing Sum Of All The Digits In A Number)
+
+ Scanner sc = new Scanner(System.in);
+   System.out.print("Enter your number ");
+   long num = sc.nextLong();
+   long digit,sum =0;
+   do{
+       digit = num % 10;
+       sum = sum + digit;
+       num = num / 10;
+   }while(num>0);
+   System.out.println(sum+ "Is The Sum Of Digits Of Given Number");
+
+//    ======================================================================================
+//    do-whileLoop Q3 (Counting Number Of Even And Odd Digits In A Number)
+
+     Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number ");
+   long num = sc.nextLong();
+   long digit , Even_count=0,Odd_counnt=0;
+   do{
+      digit = num%10;
+      if(num % 2==0){
+         Even_count++;
+      }else {
+           Odd_counnt++;
+           num = num / 10;
+       }
+   }while(num >0);
+   System.out.println(Even_count);
+   System.out.println(Odd_counnt);
+
+//    =====================================================================================
+
+//
+//    Finding Factorial Of A Number
+
+     Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number :");
+   long num = sc.nextLong();
+   long  fact=1;
+   do{
+       fact = fact*num;
+       num--;
+   }while(num>0);
+   System.out.println("Factorial Is " + fact);
+
+//    ========================================================================================
+
+   Printing Table Of A Given Number
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number ");
+   long num = sc.nextLong();
+   long mult;
+   long i =1;
+   do{
+       mult = num*i;
+       System.out.println(num +"*"+ i+ "=" +mult);
+       i++;
+   }while(i<=10);
+
+//    ==========================================================================================
+
+   Counting Number Of Digits In A Given Number
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number ");
+   long num = sc.nextLong();
+   long count=0 ,digit ;
+   do{
+      digit = num%10;
+      count++;
+      num = num/10;
+   }while(num>0);
+   System.out.println(count);
+
+//    ==========================================================================================
+
+//     Checking Palindrome Number
+
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number");
+   long num = sc.nextLong();
+   long rev=0 ,digit;
+   long  og=num;
+   do{
+      digit = num%10;
+      rev = rev * 10 + digit;
+      num = num/10;
+   }while(num>0);
+   System.out.println(rev);
+   if(og==rev){
+       System.out.println(" Is Palindrome");
+   }
+   else{
+       System.out.println("not palindrome");
+   }
+
+//    ==============================================================================
+
+    //    Checking Armstrong Number
+
+//    1³ = 1
+//    5³ = 125
+//    3³ = 27
+//    1 + 125 + 27 = 153
+
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number ");
+   long num = sc.nextLong();
+   long cube, digit,sum=0;
+   long og = num;
+   do{
+       digit = num%10;
+       cube = (digit*digit*digit);
+       sum = sum+cube;
+       num = num/10;
+
+   }while(num>0);
+   System.out.println(num);
+   if(og==sum){
+       System.out.println(" Armstrong number IS");
+   }else{
+       System.out.println(" Not Armstrong number IS ");
+   }
+
+//    ========================================================================================
+
+//    Checking Strong Number(factorial of each digit of original number)
+// 145!
+// 1! =1
+// 4! = 4 × 3 × 2 × 1 = 24
+// 5! = 5 × 4 × 3 × 2 × 1 = 120
+//    sum:
+//    1 + 24 + 120 = 145
+
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number");
+   long num = sc.nextLong();
+   long digit,sum =0;
+   long og = num;
+   do{
+       digit= num%10;
+       long fact = 1;
+       for(long i = 1; i <= digit; i++) {
+           fact = fact * i;
+       }
+        sum = sum + fact;
+        num = num/10;
+   }while(num>0);
+   System.out.println(sum);
+   if(og==sum){
+       System.out.println("Is Strong number ");
+   }else{
+       System.out.println("Is not Strong number");
+   }
+
+// =======================================================================================
+
+//    Check Automorphic Number(Automorphic number woh number hota hai jiska square usi number par end hota hai)
+//Example: 25
+//25² = 625
+
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number ");
+   long num = sc.nextLong();
+   long squre = num*num;
+   long count=0 , pow_count;
+   long og =num;
+   do{
+       num = num /10;
+       count++;
+   }while(num>0);
+   long divisor = (long) Math.pow(10,count);
+   long digit = squre%divisor;
+   if(og ==digit){
+       System.out.println("Automorphic");
+   }else{
+       System.out.println("Not Automorphic number");
+   }
+
+//    =====================================================================================
+
+//    Target Number Frequency Counter
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number ");
+   long num = sc.nextLong();
+   System.out.println("Enter your target number");
+   long target = sc.nextLong();
+   long digit , count=0;
+   do{
+       digit = num%10;
+       if(digit==target){
+           count++;
+       }
+       num = num/10;
+   }while(num>0);
+   System.out.println("Frequency Of +target+ Is "+ count);
+
+//    =========================================================================================
+
+//    Finding The Largest Number
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number");
+   long num = sc.nextLong();
+   long digit, largest_num= num%10;
+   do{
+       digit = num % 10;
+       if(digit > largest_num){
+       largest_num = digit;
+       }
+       num = num /10;
+   }while(num>0);
+   System.out.println(largest_num+ "Is The Largest Digit");
+
+//    ===========================================================================================
+//    Finding The Smallest Number
+
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number");
+   long num = sc.nextLong();
+   long digit, Smallest_num= num%10;
+   do{
+       digit = num % 10;
+       if(digit < Smallest_num){
+       Smallest_num = digit;
+       }
+       num = num /10;
+   }while(num>0);
+   System.out.println(Smallest_num+ "Is The Largest Digit");
+
+//    ===============================================================================================
+
+//    Counting Number Of Zeros In A Number
+
+    Scanner sc = new Scanner(System.in);
+   System.out.println("Enter your number ");
+   long num = sc.nextLong();
+   long digit, count=0 ;
+   do{
+       digit= num % 10;
+       if(digit ==0){
+          count++;
+       }
+       num = num / 10;
+   }while(num>0);
+   System.out.println("Enter your Counting of Zeros number is"+ count);
+
+//    ============================================================================================
+
+//    Sum Of Even Position Digits
+
+   Scanner sc = new Scanner (System.in);
+   System.out.println("Enter your number");
+   long num = sc.nextLong();
+   long digit , position =1;
+   long sum =0;
+   do{
+       digit = num % 10;
+       if(position % 2==0){
+        sum = sum + digit;
+       }
+       num = num / 10;
+       position++;
+   }while(num>0);
+   System.out.println("Sum of Even Position"+sum);
+
+
+
+}
+
