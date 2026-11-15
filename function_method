@@ -1,0 +1,410 @@
+ import java.util.Scanner;
+ public class function_method {
+   public static void printHelloworld(){
+       System.out.println("Hello world");
+       System.out.println("Hello world");
+       System.out.println("Hello world");
+   }
+   public static void main(String[] args){
+       printHelloworld();
+   }
+//    =======================================================================================
+  // Q1 sum of a & b
+   public static long calculateSum(long a , long b) {//parameters or formal parameters
+       long Sum = a + b;
+       return Sum;
+   }
+   public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number a");
+    long a = sc.nextLong();
+    System.out.println("Enter your number b");
+    long b = sc.nextLong();
+    long Sum = calculateSum(a,b);          // arguments or actual parameter
+    System.out.println("Sum is :" +Sum);
+   }
+
+//    ========================================================================================
+
+//     Q2 product of a & b
+   public static long multiply(long a , long b){
+       long product = a * b;
+       return product;
+   }
+   public static void main(String args[]){
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter your number a:");
+       long a = sc.nextLong();
+       System.out.println("Enter your number b:");
+       long b = sc.nextLong();
+       long prod = multiply(a , b);
+       System.out.println("a * b= " + prod);
+   }
+
+//    ========================================================================================
+
+//    Q3 Find of factorial
+   public static long factorial(long n){
+       long fact = 1;
+       for(long i=1; i<=n; i++){
+           fact = fact*i;
+       }
+       return fact;
+   }
+   public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
+       System.out.println("Enter your number");
+       long n = sc.nextLong();
+       long fact = factorial(n);
+       System.out.println("Factorial is: "+fact);
+   }
+
+//    ======================================================================================
+
+//   Find Binomial Coefficient
+//    formula fact_n/(fact_r*factn-r)
+
+   public static long factorial(long n ){
+       long fact = 1;
+       for(long i=1; i<=n; i++){
+          fact = fact*i;
+       }
+       return fact;
+   }
+   public static long binoCoeff(long n, long r){
+       long fact_n = factorial(n);
+       long fact_r = factorial(r);
+       long fact_nmr = factorial(n-r);
+
+       long binoCoeff = fact_n/(fact_r*fact_nmr);
+       return binoCoeff;
+   }
+   public static void main(){
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter n: ");
+       long n = sc.nextLong();
+       System.out.println("Enter r: ");
+       long r = sc.nextLong();
+       long binoCoeff = binoCoeff(n ,r);
+       System.out.println("Binomial Coefficient is: "+binoCoeff);
+   }
+
+//    ======================================================================================
+
+//    Q
+
+////    function to cal sum of 2 nums
+   
+   public static long sum(long a, long b){
+     return a + b;
+   }
+//    function to cal sum of 3 nums
+   public static long sum(long a, long b, long c){
+       return a + b + c;
+   }
+   public static void main(String args[]){
+       System.out.println(sum(4 , 5));
+       System.out.println(sum(4 , 5 , 6));
+   }
+//    =========================================================================================
+
+////    function to cal int sum
+   
+   public static int sum (int a , int b){
+       return a + b;
+   }
+
+    / /    function to cal float sum
+   public static float sum (float a , float b){
+       return a + b;
+   }
+   public static void main(String args[]){
+       System.out.println(sum(2 , 3));
+       System.out.println(sum(2.0f  , 4.0f));
+   }
+
+//    ===========================================================================================
+
+//    check if a number is prime or not
+
+//   only for n>=2;
+   public static boolean isPrime(long n){
+       if(n==2){
+       return true;
+       }
+   for(long i =2; i <= n-1; i++){
+      if(n % i == 0){
+      return false;
+      }
+   }
+   return true;
+   }
+   public static void main(String args[]){
+       System.out.println(isPrime(12));
+   }
+
+//    =================================================================================================
+
+//    check if a number is prime or not(Optimized )
+
+//   only for n>=2;
+   public static boolean isPrime(long n){
+       if(n==2){
+       return true;
+       }
+   for(long i =2; i <=Math.sqrt(n); i++){
+      if(n % i == 0){
+      return false;
+      }
+   }
+   return true;
+   }
+   public static void main(String args[]){
+       System.out.println(isPrime(17));
+   }
+//  ==================================================================================================
+
+//
+
+//    only for n>=2;
+   public static boolean isPrime(long n){
+       if(n==2){
+      return true;
+       }
+       for(long i = 2; i<= Math.sqrt(n); i++){
+          if(n % i == 0){
+        return false;
+          }
+       }
+    return true;
+   }
+   public static void primesInRange(long n){
+      for(long i=2; i<=n; i++){
+         if(isPrime(i)){
+             System.out.println(i+ " ");
+         }
+      }
+       System.out.println();
+   }
+   public static void main (String args[]){
+       primesInRange(100);
+   }
+
+//    ========================================================================================
+
+//    Binary to Decimal
+   
+   public static void BinToDec(long binNum) {
+       long myNum = binNum;
+       long pow = 0;
+       long decNum = 0;
+
+       while (binNum > 0) {
+           long lastdigit = binNum % 10;
+           decNum = decNum + (lastdigit * (long) Math.pow(2, pow));
+
+           pow++;
+           binNum = binNum / 10;
+       }
+       System.out.println("Decimal of " + myNum + " = " + decNum);
+   }
+
+   public static void main(String args[]) {
+       BinToDec(111);
+   }
+
+//    ==============================================================================================
+
+//    Decimal to Binary converter
+
+   public static void DecToBin(long num){
+       long myNum = num;
+       long pow = 0;
+       long binNum = 0;
+
+       while(num > 0){
+         long rem = num % 2;
+         binNum = binNum + (rem * (long)Math.pow(10,pow));
+
+         pow++;
+         num = num /2;
+       }
+       System.out.println("Decimal of " + myNum + " = " +binNum);
+   }
+   public static void main(String args[]){
+       DecToBin(11);
+   }
+
+//    ===============================================================================================
+
+//    =====Scope===
+//   == method scope===(method scome main function ke andar hi variable ko assign kar sakte hai)
+   public static void main(String args[]){
+       System.out.println(S);
+       int S = 45;
+       System.out.println(S);
+   }
+
+   public static void printS(){
+       int S = 45;
+   }
+   public static void main(String args[]){
+       System.out.println(S);
+   }
+
+    /// /  ====Block Scope===(jitna bhi code likhayega wo curli-braces ke andar hi hona chahiye)
+   
+   public static void main(String args[]){
+       for(long i =1, j=0 , k = 4 , i<=5; i++){
+
+       }
+       int i=4;
+       System.out.println(i);
+   }
+
+//    Write a Java method to compute the average of three numbers
+   
+   public static long Avg3Num(long a, long b, long c) {
+       return (a + b + c) / 3;
+   }
+
+   public static void main(String args[]) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter your num a: ");
+       long a = sc.nextLong();
+       System.out.println("Enter your num b: ");
+       long b = sc.nextLong();
+       System.out.println("Enter your num c: ");
+       long c = sc.nextLong();
+       System.out.println("The Average value is " + Avg3Num(a, b, c));
+   }
+
+//    Write a method named isEven that accepts an int argument. The method
+//should return true if the argument is even, or false otherwise. Also write a program to test your
+//method.
+
+   public static boolean isEven(int n) {
+       if (n % 2 == 0) {
+           return true;
+       } else {
+           return false;
+       }
+   }
+
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+
+       System.out.println("Enter a number:");
+       int n = sc.nextInt();
+
+       if (isEven(n)) {
+           System.out.println("Even Number");
+       } else {
+           System.out.println("Odd Number");
+       }
+   }
+
+
+   public static boolean ispolindrome(long num) {
+       long original = num;
+       long reverse = 0;
+
+       while (num > 0) {
+           long digit = num % 10;
+           reverse = reverse * 10 + digit;
+           num = num / 10;
+       }
+
+       if (original == reverse) {
+           return true;
+       } else {
+           return false;
+       }
+   }
+
+   public static void main(String args[]) {
+       Scanner sc = new Scanner(System.in);
+
+       System.out.println("Enter your number:");
+       long num = sc.nextLong();
+
+       if (ispolindrome(num)) {
+           System.out.println("Palindrome is");
+       } else {
+           System.out.println("Not palindrome");
+       }
+   }
+
+//    Question 4 : READ & CODE EXERCISE
+
+
+       // a. Minimum
+       public static int minimum(int a, int b) {
+           return Math.min(a, b);
+       }
+
+       // b. Maximum
+       public static int maximum(int a, int b) {
+           return Math.max(a, b);
+       }
+
+       // c. Square Root
+       public static double squareRoot(double n) {
+           return Math.sqrt(n);
+       }
+
+       // d. Power
+       public static double power(double a, double b) {
+           return Math.pow(a, b);
+       }
+
+       // e. Average
+       public static double average(double a, double b) {
+           return (a + b) / 2;
+       }
+
+       // f. Absolute Value
+       public static int absolute(int n) {
+           return Math.abs(n);
+       }
+
+       public static void main(String args[]) {
+
+           System.out.println("Minimum = " + minimum(10, 20));
+
+           System.out.println("Maximum = " + maximum(10, 20));
+
+           System.out.println("Square Root = " + squareRoot(25));
+
+           System.out.println("Power = " + power(2, 3));
+
+           System.out.println("Average = " + average(10, 20));
+
+           System.out.println("Absolute = " + absolute(-25));
+       }
+
+//    Write a Java method to compute the sum of the digits in an integer
+
+   public static long sumOfDigit(long num){
+       long sum = 0;
+       while(num > 0){
+       long digit = num % 10;
+       sum = sum + digit;
+       num = num / 10;
+       }
+       return sum;
+   }
+   public static void main(String args[]){
+     Scanner sc = new Scanner(System.in);
+     System.out.println("Enter your number: ");
+     long num = sc.nextLong();
+     long result = sumOfDigit(num);
+     System.out.println("Sum of digit =" +result);
+   }
+    }
+
+
+
+
+
+
